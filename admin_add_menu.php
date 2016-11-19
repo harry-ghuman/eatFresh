@@ -6,11 +6,13 @@
 </head>
 <body>
 <?php
-include "admin_header.php";
+include "admin_header.php"; //including header file for admin panel
 ?>
+<!-- bootstrap classes to improve UI -->
 <div class="container">
     <div class="col-md-3">
     </div>
+    <!-- form to add new food items -->
     <div class="col-md-6">
         <div class="well">
             <div class="row">

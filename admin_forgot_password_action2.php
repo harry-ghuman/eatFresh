@@ -1,9 +1,10 @@
 <?php
 include "connection.php";
+//fetching the values
 $security_answer=$_REQUEST['security_answer'];
 $email=$_REQUEST['email'];
 $value=$_REQUEST['value'];
-
+//querying the database to get value of security_answer for entered email id
 $query="select * from admin_info where email='$email'";
 $result=mysqli_query($conn,$query);
 $row=mysqli_fetch_array($result);
@@ -20,6 +21,7 @@ $answer=$row[6];
 </head>
 <body>
 <?php
+//alert
 if(isset($_REQUEST['q'])) {
     if ($_REQUEST['q'] == 1) {
         ?>
@@ -30,6 +32,7 @@ if(isset($_REQUEST['q'])) {
         <?php
     }
 }
+//if security_answer entered by user matches the security_answer in the db
 if($security_answer==$answer) {
     ?>
     <br><br><br><br>
@@ -44,18 +47,17 @@ if($security_answer==$answer) {
                     <div class="form-group col-md-12">
                         Password
                         <br><br>
-                        <input type="password" class="form-control" id="password" name="password" required
-                               minlength="6">
+                        <input type="password" class="form-control" id="password" name="password" required minlength="6">
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-12">
                         Confirm password
-                        <br>
-                        <br>
+                        <br><br>
                         <input type="password" class="form-control" name="confirm_password" id="confirm_password"
                                minlength="6">
                     </div>
+                    <!-- Script to check password, confirm_password match or not -->
                     <script>
                         $('#password, #confirm_password').on('keyup', function () {
                             if ($('#password').val() == $('#confirm_password').val()) {
@@ -65,6 +67,7 @@ if($security_answer==$answer) {
                         });
                     </script>
                 </div>
+                <!-- Message from script above is printed in the row below -->
                 <div class="row">
                     <div class="form-group col-md-12">
                         <span id='message'></span>
@@ -80,6 +83,7 @@ if($security_answer==$answer) {
     </div>
     <?php
 }
+//if security_answer entered by user doesnt match the security_answer in the db
 else{
     header("location:admin_forgot_password_action.php?q=1&value=$value");
 }

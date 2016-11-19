@@ -3,9 +3,11 @@
     <title>eatFresh | Inspiring healthier habits</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Adding bootstrap files -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <script src="bootstrap/jquery/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- Script for bootstrap modal -->
     <script>
         $(document).ready(function(){
             $("#myBtn").click(function(){
@@ -16,6 +18,7 @@
 </head>
 <body>
 <?php
+//Alerts to show various messages
 if(isset($_REQUEST['q'])) {
     if($_REQUEST['q'] == 1) {
         ?>
@@ -78,7 +81,6 @@ if(isset($_REQUEST['q'])) {
         </div>
         <form action="admin_login_action.php" method="get">
             <div class="row" style="padding: 25px">
-
                 <input type="text" class="form-control" name="email" placeholder="Email" required>
             </div>
 
@@ -94,7 +96,7 @@ if(isset($_REQUEST['q'])) {
         <a href="admin_forgot_password.php"style="float:right">Forgot password?</a>
     </div>
 </div>
-
+<!-- Modal to create account for new user -->
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -130,6 +132,7 @@ if(isset($_REQUEST['q'])) {
                             <label>Confirm password</label>
                             <input type="password" class="form-control" name="confirm_password" id="confirm_password" minlength="6">
                         </div>
+                        <!-- Script to check password and confirm_password match -->
                         <script>
                         $('#password, #confirm_password').on('keyup', function () {
                             if ($('#password').val() == $('#confirm_password').val()) {

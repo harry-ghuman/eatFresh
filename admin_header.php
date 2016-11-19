@@ -1,4 +1,5 @@
 <?php
+//using session concept for maintaining login information
 session_start();
 if(isset($_SESSION['email']))
 {}
@@ -7,13 +8,22 @@ else
     header("location:admin_login.php");
 }
 ?>
-<title>Admin panel</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-<script src="bootstrap/jquery/jquery.min.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
-<nav class="navbar navbar-default">
+<html>
+<head>
+  <!--
+  using bootstrap navbar as admin header which will be included in every admin webpage used
+  navbar has different options such as food items, orders, contact inquiries, admin email id
+  and logout option to the right side
+  -->
+  <title>Admin panel</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <script src="bootstrap/jquery/jquery.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="admin_index.php">eatFresh | Inspiring healthier habits</a>
@@ -37,3 +47,5 @@ else
         </ul>
     </div>
 </nav>
+</body>
+</html>

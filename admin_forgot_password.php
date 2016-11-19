@@ -9,6 +9,7 @@
 </head>
 <body>
 <?php
+//alert
 if(isset($_REQUEST['q']))   {
     if ($_REQUEST['q'] == 1) {
     ?>
@@ -20,6 +21,10 @@ if(isset($_REQUEST['q']))   {
     }
 }
 ?>
+<!--
+user is given two methods of retrieving password, first one is by using email and
+second one is by entering firtname and lastname separated by hyphen
+ -->
 <br><br><br><br>
 <div class="form-group col-md-4"></div>
 <div class="form-group col-md-4">

@@ -1,29 +1,20 @@
 <?php
 include "admin_header.php";
 include "connection.php";
-$query="SELECT * FROM `contact_us` order by id DESC";
-
+$query="SELECT * FROM `contact_us` order by id DESC";//query to fetch the results store in "contact_us" table of database
 $result=mysqli_query($conn,$query);
-
-if(isset($_REQUEST['q'])) {
-    if ($_REQUEST['q'] == 1) {
-        ?>
-        <div class="alert alert-info">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <center>Food item deleted</center>
-        </div>
-        <?php
-    }
-}
 ?>
 <!doctype>
 <html>
 <head>
 </head>
 <body>
-
-<div class="col-md-1"></div>
-<div class="col-md-10">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <!--
+    Table shows the list of inquiries received from "contact" form submitted by users.Admin can
+    easily reply to the user inquiries by clicking on his/her email address.
+    -->
     <div class="panel panel-primary">
         <div class="panel-heading">
             <center><h2>List of inquiries</h2></center>
@@ -64,8 +55,6 @@ if(isset($_REQUEST['q'])) {
         ?>
         </tbody>
     </table>
-</div>
-
+  </div>
 </body>
 </html>
-

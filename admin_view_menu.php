@@ -3,7 +3,7 @@ include "admin_header.php";
 include "connection.php";
 $query="select * from menu";
 $result=mysqli_query($conn,$query);
-
+//alerts
 if(isset($_REQUEST['q'])) {
     if ($_REQUEST['q'] == 1) {
         ?>
@@ -39,23 +39,22 @@ if(isset($_REQUEST['q'])) {
     }
 }
 ?>
-
 <!doctype>
 <html>
 <head>
+  <!-- Page shows all the food items in the db and also provides options such as editing, deleting food items -->
 </head>
 <body>
-
-<div class="col-md-1"></div>
-<div class="col-md-10">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
     <div class="panel panel-primary">
             <div class="panel-heading">
                 <center><h2>List of food items</h2></center>
             </div>
         </div>
     <table class="table table-striped">
-            <thead>
-            <tr>
+      <thead>
+        <tr>
                 <th>#</th>
                 <th>Food item</th>
                 <th>Food type</th>
@@ -64,33 +63,30 @@ if(isset($_REQUEST['q'])) {
                 <th>Description</th>
                 <th>Action</th>
             </tr>
-            </thead>
-            <tbody>
-            <?php
-            $count=1;
-            while($row=mysqli_fetch_array($result))
-            {
-                ?>
-                <tr>
-                    <td><?php echo $count."." ?></td>
-                    <td><?php echo $row[1] ?></td>
-                    <td><?php echo $row[2] ?></td>
-                    <td><?php echo $row[3] ?></td>
-                    <td><?php echo $row[5] ?></td>
-                    <td><?php echo $row[4] ?></td>
-                    <td>
-                        <button onclick="location.href='admin_edit_menu.php?food_item=<?php echo $row[1] ?>'"class="btn btn-primary btn-md">Edit</button>
-                        <button onclick="location.href='admin_delete_fooditem.php?food_item=<?php echo $row[1] ?>'"class="btn btn-primary btn-md">Delete</button>
-                    </td>
-                </tr>
-                <?php
-                $count++;
-            }
-            ?>
-            </tbody>
-        </table>
-</div>
-
+      </thead>
+      <tbody>
+        <?php
+        $count=1;
+        while($row=mysqli_fetch_array($result)){
+        ?>
+          <tr>
+            <td><?php echo $count."." ?></td>
+            <td><?php echo $row[1] ?></td>
+            <td><?php echo $row[2] ?></td>
+            <td><?php echo $row[3] ?></td>
+            <td><?php echo $row[5] ?></td>
+            <td><?php echo $row[4] ?></td>
+            <td>
+                <button onclick="location.href='admin_edit_menu.php?food_item=<?php echo $row[1] ?>'"class="btn btn-primary btn-md">Edit</button>
+                <button onclick="location.href='admin_delete_fooditem.php?food_item=<?php echo $row[1] ?>'"class="btn btn-primary btn-md">Delete</button>
+            </td>
+          </tr>
+          <?php
+          $count++;
+        }
+        ?>
+      </tbody>
+    </table>
+  </div>
 </body>
 </html>
-

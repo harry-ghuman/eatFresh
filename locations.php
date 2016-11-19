@@ -1,8 +1,12 @@
+<?php
+include "header.php";
+?>
 <html>
 <head>
-    <?php
-    include "header.php";
-    ?>
+    <!--
+    Page showcases the locations of eatFresh. Google API has been used in this page, putting markers for the
+    locations in Windsor, Brampton, London and Cambridge.
+    -->
     <script type="text/javascript"
             src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB1tbIAqN0XqcgTR1-FxYoVTVq6Is6lD98&sensor=false">
     </script>
@@ -62,29 +66,27 @@
     </style>
 </head>
 <body onload="initialize()">
-<div class="form-group col-md-4">
-    <div class="well">
-        <p id="heading">visit our locations</p>
-        <div class="text">
-        <div class="row">
-            <span class="badge">1</span>   45 West St, <strong>Brampton</strong>, ON L6X 1V8
-        </div>
-        <div class="row">
-            <span class="badge">2</span>   950 Grand Marais Rd E, <strong>Windsor</strong>, ON N8X 3J2
-        </div>
-        <div class="row">
-            <span class="badge">3</span>   451 Waterloo St, <strong>London</strong>, ON N6B 2P4
-        </div>
-        <div class="row">
-            <span class="badge">4</span>   73 Water St N, <strong>Cambridge</strong>, ON N1R 2L8
-        </div>
-        </div>
-
-    </div>
-</div>
-<div class="form-group col-md-8">
-    <div id="default" style="width:100%; height:550px"></div>
-</div>
+  <div class="form-group col-md-4">
+      <div class="well">
+          <p id="heading">visit our locations</p>
+          <div class="text">
+            <div class="row">
+                <span class="badge">1</span>   45 West St, <strong>Brampton</strong>, ON L6X 1V8
+            </div>
+            <div class="row">
+                <span class="badge">2</span>   950 Grand Marais Rd E, <strong>Windsor</strong>, ON N8X 3J2
+            </div>
+            <div class="row">
+                <span class="badge">3</span>   451 Waterloo St, <strong>London</strong>, ON N6B 2P4
+            </div>
+            <div class="row">
+                <span class="badge">4</span>   73 Water St N, <strong>Cambridge</strong>, ON N1R 2L8
+            </div>
+          </div>
+      </div>
+  </div>
+  <div class="form-group col-md-8">
+      <div id="default" style="width:100%; height:550px"></div>
+  </div>
 </body>
 </html>
-

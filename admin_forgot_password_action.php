@@ -1,8 +1,10 @@
 <?php
-$_SESSION['value']=$value;
-error_reporting(0);
+$value=$_REQUEST['value'];
+session_start;
+$_SESSION['value']=$value;//storing email or name in session variable "value" for further use
+error_reporting(0);//to avoid seeing any notice messages
 include "connection.php";
-
+//if user enters email
 if(filter_var("$value", FILTER_VALIDATE_EMAIL)) {
     $query="select * from admin_info where email='$value'";
     $res=mysqli_query($conn,$query);
@@ -10,6 +12,7 @@ if(filter_var("$value", FILTER_VALIDATE_EMAIL)) {
     $security_question=$row[5];
     $email=$row[1];
 }
+//if user enters name
 else {
     list($firstname,$lastname)=split('-',strtolower($value));
     $query="select security_question,email from admin_info where firstname='$firstname' and lastname='$lastname'";
@@ -30,6 +33,7 @@ else {
 </head>
 <body>
 <?php
+// if user submits wrong security_question
 if(isset($_REQUEST['q'])) {
     if ($_REQUEST['q'] == 1) {
         ?>
@@ -71,10 +75,6 @@ else
 {
     header("location:admin_forgot_password.php?q=1");
 }
-
 ?>
-
-
-
 </body>
 </html>

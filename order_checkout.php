@@ -1,8 +1,13 @@
 <?php
+/*
+this page displays order details. user can make a change in order or remove a food item from the cart_item
+as per requirement. user can proceed to next step that is "customer details" by clicking on confirm order.
+*/
 include "header.php";
 if(!empty($_GET["action"])) {
     switch ($_GET["action"]) {
         case "remove":
+            //removing values from session variable "cart_item"
             if (!empty($_SESSION["cart_item"])) {
                 foreach ($_SESSION["cart_item"] as $k => $v) {
                     if ($_GET["food_item"] == $k)
@@ -13,10 +18,15 @@ if(!empty($_GET["action"])) {
             }
             $item_total = 0;
             $count=1;
+            //updating "item_total" variable
             foreach ($_SESSION["cart_item"] as $item) {
                 $item_total += ($item["price"] * $item["quantity"]);
                 $count++;
             }
+            /*
+            updating session variables "total" and "count"
+            these session variables are used in cart shown on user navigation bar
+            */
             $_SESSION['total'] = $item_total;
             $_SESSION['count'] =$count-1;
             header("location: order_checkout.php");
@@ -29,15 +39,14 @@ if(isset($_SESSION["cart_item"])){
     <div class="form-group col-md-3"></div>
     <div class="form-group col-md-6">
         <div class="well">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <center><h2>Your Order</h2></center>
-            </div>
-        </div>
-        <div class="well">
+          <div class="panel panel-primary">
+              <div class="panel-heading">
+                  <center><h2>Your Order</h2></center>
+              </div>
+          </div>
+          <div class="well">
             <table class="table table-striped">
-                <thead>
-                </thead>
+                <thead></thead>
                 <tbody>
                     <tr>
                         <th><strong>#</strong></th>
@@ -65,7 +74,6 @@ if(isset($_SESSION["cart_item"])){
                     <tr>
                         <td colspan="5" align=right><strong>Total:</strong> <?php echo "$".$item_total; ?></td>
                     </tr>
-                    
                     <tr>
                         <td><a href="order_online.php" class="btn btn-primary">Make a change</a> </td>
                         <td colspan="5" align="right"><a href="customer_details.php" class="btn btn-primary">Confirm order</a> </td>
@@ -73,22 +81,18 @@ if(isset($_SESSION["cart_item"])){
                 </tbody>
             </table>
         </div>
-    </div>
+      </div>
     </div>
     <?php
 }
-else
-{
+else{
     ?>
     <div class="form-group col-md-3"></div>
     <div class="form-group col-md-6">
-
-    <div class="alert alert-info">
-
-    <center><h2>Cart is empty</h2></center>
+        <div class="alert alert-info">
+            <center><h2>Cart is empty</h2></center>
         </div>
-        </div>
-
-<?php
+    </div>
+    <?php
 }
-   ?>
+?>
