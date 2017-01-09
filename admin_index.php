@@ -93,8 +93,6 @@ $cambridge_orders=$row10[0];
             float: left;
             width: 90px;
             height: 90px;
-
-
         }
         h4 {
             position: relative;

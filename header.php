@@ -32,6 +32,7 @@ session_start();
               <li><a href="order_online.php">Order online</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
+			  <li><a href="admin_login.php">Admin panel</a> </li>
               <li>
                   <a href="order_checkout.php"><span class="glyphicon glyphicon-shopping-cart"></span>
                       <?php
