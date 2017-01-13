@@ -8,37 +8,12 @@
     session_start();
     ?>
     <style>
-        #padded-multiline {
-            background: url("pictures/menu1.jpg");
-            line-height: 7.0;
-            padding: 120px 80px 50px 50px;
-            width: 1200px;
-            height: 500px;
-            margin: 20px auto;
-        }
-        #padded-multiline span {
-            background-color: black;
-            color: #fff;
-            display: inline;
-            padding: 0.5rem;
-            -webkit-box-decoration-break: clone;
-            box-decoration-break: clone;
-        }
         #heading{
             font-family: Cambria;
         }
         #text{
             font-family: "Bookman Old Style";
             font-size: small;
-        }
-        #image
-        {
-            background: url("pictures/menu2.jpg");
-            line-height: 7.0;
-            padding: 120px 80px 50px 50px;
-            width: 1200px;
-            height: 500px;
-            margin: 20px auto;
         }
     </style>
 </head>
@@ -54,9 +29,7 @@
       <?php
   }
   ?>
-  <h1 id="padded-multiline">
-      <center><span>Menu</span></center>
-  </h1>
+<img src="pictures/menu1.jpg" class="img-responsive" style="padding: 20px 50px 50px 50px;">
   <?php
   //fetching menu data from the db
   $query1="select * from menu order by food_item asc";
@@ -94,7 +67,7 @@
         if($count == 6)
         {
             ?>
-            <div id="image"></div>
+            <img src="pictures/menu2.jpg" class="img-responsive" style="padding: 20px 50px 50px 50px;">
             <div class="row"></div>
             <div class="form-group col-md-2"></div>
             <?php

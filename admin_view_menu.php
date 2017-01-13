@@ -53,6 +53,7 @@ if(isset($_REQUEST['q'])) {
                     <center><h2>List of food items</h2></center>
                 </div>
             </div>
+            <div class="table-responsive">
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -88,6 +89,7 @@ if(isset($_REQUEST['q'])) {
                     ?>
                 </tbody>
             </table>
+            </div>
         </div>
     </div>
 </body>

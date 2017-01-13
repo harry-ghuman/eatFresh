@@ -21,6 +21,7 @@ $result=mysqli_query($conn,$query);
                     <center><h2>List of inquiries</h2></center>
                 </div>
             </div>
+            <div class="table-responsive">
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -56,6 +57,7 @@ $result=mysqli_query($conn,$query);
                     ?>
                 </tbody>
             </table>
+            </div>
         </div>
     </div>
 </body>

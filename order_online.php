@@ -73,7 +73,8 @@ if(!empty($_GET["action"])) {
         </div>
       </div>
       <div class="well">
-        <table class="table table-striped">
+          <div class="table-responsive">
+          <table class="table table-striped">
           <thead>
               <tr>
                   <th>#</th>
@@ -112,6 +113,7 @@ if(!empty($_GET["action"])) {
             ?>
           </tbody>
         </table>
+          </div>
       </div>
     </div>
   </div>

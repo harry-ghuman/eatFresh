@@ -44,7 +44,8 @@ $row3=mysqli_fetch_array($result3);
         <h2>Thanks for your order <?php echo ucfirst($row1[2])." ".ucfirst($row1[3])."!" ?></h2>
         <h4>Order ID: <?php echo $row1[1] ?></h4>
         <h4>Items ordered:</h4>
-        <table class="table table-bordered">
+          <div class="table-responsive">
+          <table class="table table-bordered">
           <?php
           while($row2=mysqli_fetch_array($result2)){
           ?>
@@ -56,10 +57,11 @@ $row3=mysqli_fetch_array($result3);
               }
               ?>
               <tr>
-                  <td><strong>Total   </strong><span class="badge"><?php echo $row3[0];?></span></td>
+                  <td><strong>Total (in CAD)   </strong><span class="badge"><?php echo $row3[0];?></span></td>
               </tr>
               </tbody>
           </table>
+          </div>
         <h4>Phone: <?php echo $row1[8]?></h4>
         <h4>Address: <?php echo $row1[4].", ".ucfirst($row1[5])." ".strtoupper($row1[6]) ?></h4>
         <div class="alert alert-info">

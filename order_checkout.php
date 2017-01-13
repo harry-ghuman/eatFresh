@@ -45,7 +45,8 @@ if(isset($_SESSION["cart_item"])){
               </div>
           </div>
           <div class="well">
-            <table class="table table-striped">
+              <div class="table-responsive">
+              <table class="table table-striped">
                 <thead></thead>
                 <tbody>
                     <tr>
@@ -80,6 +81,7 @@ if(isset($_SESSION["cart_item"])){
                     </tr>
                 </tbody>
             </table>
+              </div>
         </div>
       </div>
     </div>

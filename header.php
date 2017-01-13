@@ -25,7 +25,7 @@ session_start();
               <a class="navbar-brand" href="index.php">eatFresh | Inspiring healthier habits</a>
           </div>
           <ul class="nav navbar-nav">
-              <li><a href="view_menu.php">Menu</a></li>
+              <li><a href="index.php">Menu</a></li>
               <li><a href="locations.php">Locations</a> </li>
               <li><a href="our_story.php">Our story</a> </li>
               <li><a href="contact_us.php">Contact</a></li>
